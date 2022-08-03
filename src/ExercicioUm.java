@@ -31,15 +31,50 @@ public class ExercicioUm {
         switch (menu) {
             // 1) Crie um programa que calcule a média (`(nota1 + nota2 + nota3 / 3)`)
             case 1:
-                // media(double notaUm, double notaDois, double notaTres)
+                {
+                double nota1 = 10;
+                double nota2 = 5;
+                double nota3 = 9;  
+                double media = (nota1 + nota2 + nota3) / 3;
+            
+                System.out.println("Primeira nota é " + nota1);
+                System.out.println("Segunda  nota é " + nota2);
+                System.out.println("Terceira nota é " + nota3);
+            
+                System.out.println("A media das notas é " + media);
+            
+                }
+
                 break;
             // 2) Crie um programa que calcule a área (`lado1 * lado2`)
-            case 2:
-                // area(double ladoUm, double ladoDois)
+            case 2:  {
+
+
+                double lado1 = 200;
+                double lado2 = 3000;
+
+                double area = (lado1 * lado2);
+
+                System.out.println("A area é: " + area );
+                }
+
+
+
                 break;
             // 3) Crie um programa que calcule o volume (`largura * altura * profundidade`)
-            case 3:
-                // volume(double largura, double altura, double profundidade)
+            case 3:{
+                double largura = 20;
+                double altura = 10;
+                double profundidade = 5;
+                double volume = (largura * altura * profundidade);
+
+                System.out.println("A largura é =       " + largura);
+                System.out.println("A altura é =        " + altura);
+                System.out.println("A profundidade é =  " + profundidade);
+                System.out.println("O volume é: =       " + volume );
+
+
+            }
                 break;
             // 4) Crie um programa que avalie se um valor é maior do que o dobro de outro valor
             case 4:
