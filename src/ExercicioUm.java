@@ -71,15 +71,6 @@ public class ExercicioUm {
                 System.out.println("O volume é: =       " + volume );
                 
 
-                System.out.println("A largura é =       " + largura);
-                System.out.println("A altura é =        " + altura);
-                System.out.println("A profundidade é =  " + profundidade);
-                System.out.println("O volume é: =       " + volume );
-
-                System.out.println("A largura é =       " + largura);
-                System.out.println("A altura é =        " + altura);
-                System.out.println("A profundidade é =  " + profundidade);
-                System.out.println("O volume é: =       " + volume );
             }
                 break;
             // 4) Crie um programa que avalie se um valor é maior do que o dobro de outro valor
@@ -93,6 +84,18 @@ public class ExercicioUm {
             // 6) Crie um programa que calcule a velocidade média de uma viagem (`distancia (km) / tempo (h)`)
             case 6:
                 // mediaViagem(double distancia, double tempo)
+                {
+                    double distancia =  150;
+                    double tempo =  2;
+                    double velocidademedia = distancia / tempo ;
+
+                    System.out.println("A distancia percorrida é de " + distancia + "km " );
+                    System.out.println("O tempo percorrido é de " + 2 + "h " );
+                    System.out.println("A velocidade média dessa viajem foi de " + velocidademedia + "km/h " );
+
+
+
+                }
                 break;
             // 7) Crie um programa que calcule o percentual de imposto pago (`faturamento \ qtd imposto`)
             case 7:
