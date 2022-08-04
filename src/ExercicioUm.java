@@ -57,9 +57,6 @@ public class ExercicioUm {
 
                 System.out.println("A area é: " + area );
                 }
-
-
-
                 break;
             // 3) Crie um programa que calcule o volume (`largura * altura * profundidade`)
             case 3:{
@@ -72,8 +69,17 @@ public class ExercicioUm {
                 System.out.println("A altura é =        " + altura);
                 System.out.println("A profundidade é =  " + profundidade);
                 System.out.println("O volume é: =       " + volume );
+                
 
+                System.out.println("A largura é =       " + largura);
+                System.out.println("A altura é =        " + altura);
+                System.out.println("A profundidade é =  " + profundidade);
+                System.out.println("O volume é: =       " + volume );
 
+                System.out.println("A largura é =       " + largura);
+                System.out.println("A altura é =        " + altura);
+                System.out.println("A profundidade é =  " + profundidade);
+                System.out.println("O volume é: =       " + volume );
             }
                 break;
             // 4) Crie um programa que avalie se um valor é maior do que o dobro de outro valor
