@@ -49,7 +49,6 @@ public class ExercicioUm {
             // 2) Crie um programa que calcule a área (`lado1 * lado2`)
             case 2:  {
 
-
                 double lado1 = 200;
                 double lado2 = 3000;
 
@@ -70,12 +69,48 @@ public class ExercicioUm {
                 System.out.println("A profundidade é =  " + profundidade);
                 System.out.println("O volume é: =       " + volume );
                 
-
             }
                 break;
             // 4) Crie um programa que avalie se um valor é maior do que o dobro de outro valor
             case 4:
                 // valorMaiorQueDobro(double base, double verificar)
+                {
+
+                    double n1 = 7.5;
+    
+                    double n2 = 3.5;
+    
+                    double dobro1 = n1 * 2;
+    
+                    double dobro2 = n2 * 2;
+    
+    
+    
+                    System.out.println("Número 1 = " + n1);
+    
+                    System.out.println("Número 2 = " + n2);
+    
+    
+    
+                    if (n1 > dobro2) {
+    
+                        System.out.println("É maior que o dobro");
+    
+                    } else if (n1 == dobro2){
+    
+                        System.out.println("É igual ao dobro");
+    
+                    } else{
+    
+                        System.out.println("Não é maior que o dobro");
+    
+                    }
+    
+                }
+    
+                    // valorMaiorQueDobro(double base, double verificar)
+    
+                    break;
                 break;
             // 5) Crie um programa que calcule _bhaskara_
             case 5:
@@ -92,8 +127,6 @@ public class ExercicioUm {
                     System.out.println("A distancia percorrida é de " + distancia + "km " );
                     System.out.println("O tempo percorrido é de " + 2 + "h " );
                     System.out.println("A velocidade média dessa viajem foi de " + velocidademedia + "km/h " );
-
-
 
                 }
                 break;
