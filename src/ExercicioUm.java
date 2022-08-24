@@ -111,7 +111,7 @@ public class ExercicioUm {
                     // valorMaiorQueDobro(double base, double verificar)
     
                     break;
-                break;
+                
             // 5) Crie um programa que calcule _bhaskara_
             case 5:
                 // bhaskara(int a, int b, int c);

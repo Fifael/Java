@@ -30,19 +30,48 @@ public class ExercicioDois {
 
         switch (menu) {
             // 1) Crie um programa que receba três notas calcule a média e diga se foi aprovado (`(nota1 + nota2 + nota3 / 3)`) e (`média maior que 7 para ser aprovado`).
-            case 1:
-                // calculaMedia(double notaUm, double notaDois, double notaTres);
+            case 1:{
+            System.out.println("Sistema que calcula a media das Notas");
+            System.out.println("Informe a primeira nota");
+            double notaUm = scanner.nextDouble();
+            System.out.println("Informe a segunda nota");
+            double notaDois = scanner.nextDouble();
+            System.out.println("Informe a terceira nota");
+            double notaTres = scanner.nextDouble();
+            System.out.println("A media das notas é  " + calculaMedia(notaUm, notaDois, notaTres));
+            if (calculaMedia(notaUm, notaDois, notaTres) >= 7 ) {
+
+            System.out.println("Você foi Aprovado Parabens");
+            }
+            else
+            { 
+            System.out.println("Você foi Reprovado Burro");
+            }
+
                 break;
+
+                  }
             // 2) Crie um programa que receba um número e indique o mês que representa.
             case 2:
-                // qualMes(int mes);
+            {
+
+                System.out.println("Programa que ve qual mes é");
+                System.out.println("Informe qual o numero do mes");
+                int mes = scanner.nextInt();
+                System.out.println("O mes que voçê informou é " + qualMes(mes));
+                 
                 break;
+
+            }
             // 3) Crie um programa que simule um jogo da forca, com a entrada da palavra oculta, a quantidade de tentativas para acerto e depois solicite a entrada da palavra. A cada erro deve imprimir a quantidade de tentativas restantes e o 'membro' que foi marcado. Ao final deve imprimir se acertou ou não a palavra e se foi 'enforcado'.
             case 3:
                 // forca(String palavra, int tentativa, Scanner scanner);
                 break;
             // 4) Crie um programa que imprima a tabuada de 0 a 10.
             case 4:
+                System.out.println("Programa que imprime a tabuada");
+                
+
                 // tabuada(int numero);
                 break;
             // 5) Crie um programa que receba uma String e imprima linha a linha suas letras.
@@ -88,11 +117,60 @@ public class ExercicioDois {
     }
 
     public static double calculaMedia(double notaUm, double notaDois, double notaTres) {
-        return 0;
+    
+        double media = (notaUm+notaDois+notaTres)/3;
+
+        return media;
     }
 
     public static String qualMes(int mes) {
-        return "";
+        switch (mes) {
+
+            case 1: {
+                return "Janeiro";
+            }
+            case 2: {
+                return "Fevereiro";
+            }
+            case 3: {
+                return "Março";
+            }
+            case 4: {
+                return "Abril";
+            }
+            case 5: {
+                return "Maio";
+            }
+            case 6: {
+                return "Junho";
+            }
+            case 7: {
+                return "Julho";
+            }
+            case 8: {
+                return "Agosto";
+            }
+            case 9: {
+                return "Setembro";
+            }
+            case 10: {
+                return "Outubro";
+            }
+            case 11: {
+                return "Novembro";
+            }
+            case 12: {
+                return "Dezembro";
+            }
+
+            default:
+            return null;    
+            
+
+        }
+    
+
+    
     }
 
     public static int[] tabuada(int numero) {
