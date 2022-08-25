@@ -74,7 +74,7 @@ public class ExercicioDois {
 
                 // tabuada(int numero);
                 break;
-            // 5) Crie um programa que receba uma String e imprima linha a linha suas letras.
+            //rafafafafafafafa que receba uma String e imprima linha a linha suas letras.
             case 5:
                 // letraALetra(String palavra);
                 break;
