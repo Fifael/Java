@@ -65,6 +65,28 @@ public class ExercicioCinco {
     }
 
     public static void criarPessoa() {
+        try {
+            System.out.println("Informe o nome:");
+            String nome = scanner.next();
+            System.out.println("Informe a peso:");
+            double peso = scanner.nextdouble();
+            System.out.println("Informe o altura:");
+            double altura = scanner.nextdouble();
+            System.out.println("Informe o dataNascimento:");
+            String dataNascimento = scanner.next();
+
+            Pessoa pessoa = new Pessoa (nome,peso,altura,dataNascimento);
+            System.out.println(
+                "Id: " + carro.id + "\n"
+                + "Cor: " + carro.cor + "\n"
+                + "Ano: " + carro.ano + "\n"
+                + "Id Modelo: " + carro.modelo.id + "\n"
+                + "Modelo: " + carro.modelo.nome + "\n"
+                + "Motor: " + carro.motor.potencia
+            );
+        } catch (Exception error) {
+            System.out.println("Erro ao cadastrar carro." + error.getMessage());
+        }
         
     }
 
