@@ -25,25 +25,15 @@ public class ExercicioCinco {
         switch (menu) {
             // 1) Crie uma classe que represente uma Pessoa, devendo ter as propriedades Nome, Peso, Altura e Data de Nascimento e o método IMC, que retornará o valor do IMC.
             case 1:
-                // criarPessoa();
+                 criarPessoa();
                 break;
-            /* 2) Crie um programa que receba a pessoa criada e verifique qual o IMC.
-
-            IMC               | Classificação
-            ----------------- | ------
-            Abaixo de 18,5    | Abaixo do Peso
-            Entre 18,6 e 24,9 | Peso Ideal
-            Entre 25,0 e 29,9 | Levemente acima do peso
-            Entre 30,0 e 34,9 | Obesidade Grau I
-            Entre 35,0 e 39,9 | Obesidade Grau II
-            Acima de 40       | Obesidade Grau III (mórbida)
-            */                
+             //2) Crie um programa que receba a pessoa criada e verifique qual o IMC                       
             case 2:
-                // verificarIMC();
+                 verificarIMC();
                 break;
             // 3) Crie uma classe que represente uma Conta Corrente, devendo ter as propriedades Número da Conta, Agência, Saldo, Nome do Titular e os métodos Depósito, Saque e Saldo Total.
             case 3:
-                // contaCorrente();
+                contaCorrente();
                 break;
             // 4) Crie um programa que receba a conta corrente e deposite e saque valores, ao final imprimindo o saldo existente.
             case 4:
@@ -64,33 +54,41 @@ public class ExercicioCinco {
 
     }
 
-    public static void criarPessoa() {
+    public static Pessoa criarPessoa() {
+        Scanner scanner = new Scanner(System.in);
+
         try {
             System.out.println("Informe o nome:");
             String nome = scanner.next();
             System.out.println("Informe a peso:");
-            double peso = scanner.nextdouble();
+            double peso = scanner.nextDouble();
             System.out.println("Informe o altura:");
-            double altura = scanner.nextdouble();
+            double altura = scanner.nextDouble();
             System.out.println("Informe o dataNascimento:");
             String dataNascimento = scanner.next();
 
             Pessoa pessoa = new Pessoa (nome,peso,altura,dataNascimento);
             System.out.println(
-                "Id: " + carro.id + "\n"
-                + "Cor: " + carro.cor + "\n"
-                + "Ano: " + carro.ano + "\n"
-                + "Id Modelo: " + carro.modelo.id + "\n"
-                + "Modelo: " + carro.modelo.nome + "\n"
-                + "Motor: " + carro.motor.potencia
+                "Nome: " + pessoa.nome + "\n"
+                + "Peso: " + pessoa.peso + "\n"
+                + "Altura: " + pessoa.altura + "\n"
+                + "dataNascimento: " + pessoa.dataNascimento + "\n"
             );
+            return pessoa;
         } catch (Exception error) {
-            System.out.println("Erro ao cadastrar carro." + error.getMessage());
+            throw error;
         }
         
     }
 
-    public static void verificarIMC() {
+    public static void verificarIMC() {                
+        try {
+            Pessoa pessoa = criarPessoa();
+            System.out.println(pessoa.imcTexto());
+        } catch (Exception error) {
+            System.out.println("Erro ao cadastrar Pessoa." + error.getMessage());
+        }
+    
         
     }
 

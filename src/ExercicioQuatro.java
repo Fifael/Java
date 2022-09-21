@@ -109,6 +109,10 @@ public class ExercicioQuatro {
     // 7) Crie um programa que simule a fila de atendimento de um banco.
     public static void filaBanco() {
 
+       
+            
+        }
+
     }
     // 8) Crie um programa que receba a temperatura média de cada mês do ano e após exiba a temperatura média do ano.
     public static double temperaturaMedia(double[] temperaturas) {

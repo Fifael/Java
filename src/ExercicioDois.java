@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ExercicioDois {
@@ -30,56 +31,53 @@ public class ExercicioDois {
 
         switch (menu) {
             // 1) Crie um programa que receba três notas calcule a média e diga se foi aprovado (`(nota1 + nota2 + nota3 / 3)`) e (`média maior que 7 para ser aprovado`).
-            case 1:{
-            System.out.println("Sistema que calcula a media das Notas");
-            System.out.println("Informe a primeira nota");
-            double notaUm = scanner.nextDouble();
-            System.out.println("Informe a segunda nota");
-            double notaDois = scanner.nextDouble();
-            System.out.println("Informe a terceira nota");
-            double notaTres = scanner.nextDouble();
-            System.out.println("A media das notas é  " + calculaMedia(notaUm, notaDois, notaTres));
-            if (calculaMedia(notaUm, notaDois, notaTres) >= 7 ) {
-
-            System.out.println("Você foi Aprovado Parabens");
-            }
-            else
-            { 
-            System.out.println("Você foi Reprovado Burro");
-            }
-
+            case 1:
+                // calculaMedia(double notaUm, double notaDois, double notaTres);
                 break;
-
-                  }
             // 2) Crie um programa que receba um número e indique o mês que representa.
             case 2:
-            {
-
-                System.out.println("Programa que ve qual mes é");
-                System.out.println("Informe qual o numero do mes");
-                int mes = scanner.nextInt();
-                System.out.println("O mes que voçê informou é " + qualMes(mes));
-                 
+                // qualMes(int mes);
                 break;
-
-            }
             // 3) Crie um programa que simule um jogo da forca, com a entrada da palavra oculta, a quantidade de tentativas para acerto e depois solicite a entrada da palavra. A cada erro deve imprimir a quantidade de tentativas restantes e o 'membro' que foi marcado. Ao final deve imprimir se acertou ou não a palavra e se foi 'enforcado'.
             case 3:
+                System.out.println("Digite a palavra oculta");
+                String palavra = scanner.next();
+                System.out.println("Digite a quantidade de tentativas");
+                int tentativas = scanner.nextInt();
+
+                for (int i = tentativas; i > 0; i--) {
+                    System.out.println("Digite a palavra da tentativa " + i + ": ");
+                    String palavraTentativa = scanner.next();
+
+                    if (palavra.equals(palavraTentativa)) {
+                        System.out.println("Acertou!!");
+                        break;
+                    } else {
+                        System.out.println("Errou!!");
+                        if (i == 1) {
+                            System.out.println("Enforcado!");
+                        }
+                    }
+                }
                 // forca(String palavra, int tentativa, Scanner scanner);
                 break;
             // 4) Crie um programa que imprima a tabuada de 0 a 10.
             case 4:
-                System.out.println("Programa que imprime a tabuada");
-                
-
                 // tabuada(int numero);
                 break;
-            //rafafafafafafafa que receba uma String e imprima linha a linha suas letras.
+            // 5) Crie um programa que receba uma String e imprima linha a linha suas letras.
             case 5:
-                // letraALetra(String palavra);
+                System.out.println("Digite a palavra: ");
+                String palavraLetraALetra = scanner.next();
+                char[] letras = letraALetra(palavraLetraALetra);
+
+                for (char letra : letras) {
+                    System.out.println(letra);
+                }
                 break;
             // 6) Crie um programa que de a soma de todos os números ímpares e múltiplos de 7 entre 1 e 500.
             case 6:
+                System.out.println("A soma dos número ímpares e múltiplos de 7 entre 1 e 500 é: " + numerosImpares());
                 // numerosImpares();
                 break;
             // 7) Crie um programa que tenha como entrada as notas de um aluno. Somente se encerrará quando for inserida uma nota negativa. Ao final deverá informar a média das notas.
@@ -88,7 +86,9 @@ public class ExercicioDois {
                 break;
             // 8) Crie um programa que receba um valor e imprima o fatorial desse número. Ex.: 3! = 3 x 2 x 1 = 6.
             case 8:
-                // fatorial(int numero);
+                System.out.println("Digite o número: ");
+                int numero = scanner.nextInt();
+                System.out.print(fatorial(numero));
                 break;
             // 9) Crie um programa que receba a altera e o peso e calcule o IMC:
             // 
@@ -101,15 +101,46 @@ public class ExercicioDois {
             // Entre 35,0 e 39,9 | Obesidade Grau II
             // Acima de 40 | Obesidade Grau III (mórbida)
             case 9:
-                // imc(double altura, double peso);
+                System.out.println("Digite a altura");
+                double altura = scanner.nextDouble();
+                System.out.println("Digite o peso");
+                double peso = scanner.nextDouble();
+                double imc = imc(altura, peso);
+                if (imc < 18.5) {
+                    System.out.println("Abaixo do Peso");
+                } else if (imc >= 18.5 && imc <= 24.9) {
+                    System.out.println("Peso Ideal");
+                } else if (imc >= 25 && imc <= 29.9) {
+                    System.out.println("Levemente acima do peso");
+                } else if (imc >= 30 && imc <= 34.9) {
+                    System.out.println("Obesidade Grau I");
+                } else if (imc >= 35 && imc <= 39.9) {
+                    System.out.println("Obesidade Grau II");
+                } else if (imc >= 40) {    
+                    System.out.println("Obesidade Grau III (mórbida)");
+                }
                 break;
             // 10) Crie um programa que receba dois valores e solicite a operação a ser realizada (+ - * /). Ao final imprima o resultado.
             case 10:
-                // operador(int valorUm, int valorDois, char operacao);
+                System.out.println("Digite o primeiro valor");
+                int valorUm = scanner.nextInt();
+
+                System.out.println("Digite o segundo valor");
+                int valorDois = scanner.nextInt();
+
+                System.out.println("Digite a operação (+ - * /)");
+                char operacao = scanner.next().charAt(0);
+
+                double resultado = operador(valorUm, valorDois, operacao);
+
+                System.out.println("O valor da operação é " + resultado);
                 break;
             // DESAFIO: Crie um programa que receba um valor em reais e determine qual o mínimo de notas necessárias para entregá-lo. <br> Notas: R$ 200, R$ 100, R$ 50, R$ 10, R$ 5, R$ 1 <br> Exemplo: R$ 15 -> 1 nota de R$ 10 e 1 nota de R$ 5
             case 11:
-                // notasNecessarias(int valor);
+                System.out.println("Digite o valor em reais: ");
+                double valor = scanner.nextDouble();
+                int[] notas = notasNecessarias(valor);
+                System.out.println(Arrays.toString(notas));
             default:
                 System.out.println("Operação inválida");
                 break;
@@ -117,60 +148,11 @@ public class ExercicioDois {
     }
 
     public static double calculaMedia(double notaUm, double notaDois, double notaTres) {
-    
-        double media = (notaUm+notaDois+notaTres)/3;
-
-        return media;
+        return 0;
     }
 
     public static String qualMes(int mes) {
-        switch (mes) {
-
-            case 1: {
-                return "Janeiro";
-            }
-            case 2: {
-                return "Fevereiro";
-            }
-            case 3: {
-                return "Março";
-            }
-            case 4: {
-                return "Abril";
-            }
-            case 5: {
-                return "Maio";
-            }
-            case 6: {
-                return "Junho";
-            }
-            case 7: {
-                return "Julho";
-            }
-            case 8: {
-                return "Agosto";
-            }
-            case 9: {
-                return "Setembro";
-            }
-            case 10: {
-                return "Outubro";
-            }
-            case 11: {
-                return "Novembro";
-            }
-            case 12: {
-                return "Dezembro";
-            }
-
-            default:
-            return null;    
-            
-
-        }
-    
-
-    
+        return "";
     }
 
     public static int[] tabuada(int numero) {
@@ -178,11 +160,22 @@ public class ExercicioDois {
     }
 
     public static char[] letraALetra(String palavra) {
-        return new char[1];
+        char[] letras = new char[palavra.length()];
+
+        for (int i = 0; i < letras.length; i++) {
+            letras[i] = palavra.charAt(i);
+        }
+        return letras;
     }
 
     public static int numerosImpares() {
-        return 0;
+        int soma = 0;
+        for (int i = 1; i < 500; i++) {
+            if (i % 2 != 0 && i % 7 == 0) {
+                soma = soma + i;
+            }
+        }
+        return soma;
     }
 
     public static double calculaMedia(double[] notas) {
@@ -190,18 +183,76 @@ public class ExercicioDois {
     }
 
     public static int fatorial(int numero) {
-        return 0;
+        int fatorial = 1;
+        System.out.print(numero + "! = ");
+        for (int i = numero; i > 0; i--) {
+            fatorial *= i;
+            System.out.print(i + (i != 1 ? "x" : ""));
+        }
+        System.out.print("=");
+        return fatorial;
     }
 
     public static double imc(double altura, double peso) {
-        return 0;
+        return peso / (altura * altura);
     }
 
     public static double operador(int valorUm, int valorDois, char operacao) {
-        return 0;
+        double resultado = 0;
+        switch (operacao) {
+            case '+':
+                resultado = valorUm + valorDois;
+                break;
+            case '-':
+                resultado = valorUm - valorDois;
+                break;
+            case '*':
+                resultado =  valorUm * valorDois;
+                break;
+            case '/':
+                resultado = (double) valorUm / valorDois;
+                break;        
+            default:
+                break;
+        }
+        return resultado;
     }
 
-    public static int[] notasNecessarias(int valor) {
-        return new int[6];
+    public static int[] notasNecessarias(double valor) {
+        /*
+         * [0] - notas 200
+         * [1] - notas 100
+         * [2] - notas 50
+         * [3] - notas 10
+         * [4] - notas 5
+         * [5] - notas 1
+         */
+        double[] notas = new double[] { 200, 100, 50, 20, 10, 5, 1, 0.5 };
+        int[] valorNotas = new int[notas.length];
+
+        // 250 / 200 = 1
+        /*valorNotas[0] = (int) (valor / 200);
+        valor -= valorNotas[0] * 200; // 50
+
+        valorNotas[1] = (int) (valor / 100);
+        valor -= valorNotas[1] * 100;
+
+        valorNotas[2] = (int) (valor / 50);
+        valor -= valorNotas[2] * 50;
+
+        valorNotas[3] = (int) (valor / 10);
+        valor -= valorNotas[3] * 10;
+
+        valorNotas[4] = (int) (valor / 5);
+        valor -= valorNotas[4] * 5;
+
+        valorNotas[5] = valor;*/
+        
+        for (int i = 0; i < notas.length; i++) {
+            valorNotas[i] = (int) (valor / notas[i]);
+            valor -= valorNotas[i] * notas[i];
+        }
+
+        return valorNotas;
     }
 }
